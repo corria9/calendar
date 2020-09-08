@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Calendar UI</title>
+  </head>
+  <body>
+
+
+    <div class="calendar">
+        <p id="monthName"></p>
+        <p id="dayName"></p>
+        <p id="dayNumber"></p>
+        <p id="year"></p>
+    </div>
+
+
+    <script>
+        const lang = navigator.language;
+        let date = new Date();
+
+        let dayNumber = date.getDate();
+        let month = date.getMonth();
+        let dayName = date.toLocaleString(lang, {weekday: 'long'});
+        let monthName = date.toLocaleString(lang, {month: 'long'});
+        let year = date.getFullYear();
+
+        document.getElementById('monthName').innerHTML = monthName;
+        document.getElementById('dayName').innerHTML = dayName;
+        document.getElementById('dayNumber').innerHTML = dayNumber;
+        document.getElementById('year').innerHTML = year;
+       
+
+    </script>
+
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+            background: url('img.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .calendar{
+            position:relative;
+            width: 220px;
+            background: #fff;
+            text-align:center;
+            border-radius:8px;
+            overflow: hidden;
+            -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004); 
+        }
+        .calendar #monthName{
+            position:relative;
+            padding:5px 10px;
+            background: #ff6331;
+            color:#fff;
+            font-size:30px;
+            font-weight: 700;
+        }
+        .calendar #dayName{
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 300;
+            color:#999;   
+        }
+        .calendar #dayNumber{
+            margin-top: 0px;
+            line-height: 1em;
+            font-size: 80px;
+            font-weight: 700;
+            color:#333;   
+        }
+        .calendar #year{
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            color:#999;   
+        }
+
+
+
+    </style>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
